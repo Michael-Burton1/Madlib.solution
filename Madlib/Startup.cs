@@ -34,6 +34,8 @@ namespace Madlib
         routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
       });
 
+      app.UseStaticFiles();
+
       // These lines of code tell our app to print "Hello World" if a proper MVC route cannot be found
       // If you haven't created any routes yet, your application displays this filler text instead
       app.Run(async (context) =>
