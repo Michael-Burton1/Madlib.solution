@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using YOURPROJECT.Models;
+using Madlib.Models;
 
-namespace YOURPROJECT.Controllers
+namespace Madlib.Controllers
 {
   public class HomeController : Controller
   {
@@ -19,11 +19,11 @@ namespace YOURPROJECT.Controllers
     public ActionResult Form() { return View(); }
 
     [Route("/formresult")]
-    public ActionResult FormResult(string htmlInput1, string htmlInput2)
+    public ActionResult FormResult(string personName, int numberOfDays)
     {
       TemplateVariable myTemplateVariable = new TemplateVariable();
-      myTemplateVariable.ParsedHtmlInput1 = htmlInput1;
-      myTemplateVariable.ParsedHtmlInput2 = htmlInput2;
+      myTemplateVariable.PersonName = personName;
+      myTemplateVariable.NumberOfDays = numberOfDays;
       return View(myTemplateVariable);
     }
   }
